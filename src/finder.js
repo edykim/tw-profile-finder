@@ -62,6 +62,16 @@ class Finder {
 }
 
 module.exports = function (config, client, store) {
+    if (!config) {
+        throw new Error('config required');
+    }
+    if (!client) {
+        throw new Error('client required');
+    }
+    if (!store) {
+        throw new Error('store required');
+    }
+
     return Finder.initWith(config, client, store);
 };
 
