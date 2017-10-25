@@ -4,6 +4,7 @@
   "description": "Find profile from Twitter who you are interested",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "mocha"
   },
   "repository": {
