@@ -34,7 +34,7 @@ class Finder {
         this.data = this.data.concat(profiles).filter(filter);
         console.log('current: ' + this.data.length);
 
-        if (this.data.length >= limit) {
+        if (this.data.length >= limit || this.data.length === 0) {
             setImmediate(() => {
                 this.done();
             });
