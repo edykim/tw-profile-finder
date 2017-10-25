@@ -1,0 +1,31 @@
+{
+  "name": "tw-profile-finder",
+  "version": "1.0.0",
+  "description": "Find profile from Twitter who you are interested",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edykim/tw-profile-finder.git"
+  },
+  "keywords": [
+    "twitter",
+    "profile"
+  ],
+  "author": "Edward Kim <edward@edykim.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/edykim/tw-profile-finder/issues"
+  },
+  "homepage": "https://github.com/edykim/tw-profile-finder#readme",
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "twitter": "^1.7.1"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1"
+  }
+}
