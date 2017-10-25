@@ -31,8 +31,9 @@ class Finder {
         const limit = this.config.getConfig('limit', 1000);
         const filter = this.config.getConfig('filter', v => v);
 
-        this.data = this.data.concat(profiles).filter(filter);
-        this.data = _.uniqBy(data, 'screen_name');
+        var concatenated = this.data.concat(profiles).filter(filter);
+        this.data = _.uniqBy(concatenated, 'screen_name');
+
         console.log('current: ' + this.data.length);
 
         if (this.data.length >= limit || this.data.length === 0) {
