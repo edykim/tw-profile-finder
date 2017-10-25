@@ -1,0 +1,19 @@
+    <% _.forEach(users, function(user) { %>
+        <div class="profile">
+            <div class="box--profile">
+                <div class="bg" style="background: #<%- user.bg_color %>;"></div>
+                <img src="<%- user.image %>">
+                <div class="name">
+                    <%- user.name %> (<%- user.screen_name %>)
+                </div>
+                <div class="url">
+                    <a href="<%- user.url %>" target="_blank">
+                        <%- user.url %>
+                    </a>
+                </div>
+                <div class="desc">
+                    <%- user.description %>
+                </div>
+            </div>
+        </div>
+    <% }); %>

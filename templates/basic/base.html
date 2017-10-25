@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Export</title>
+    <style>
+    body {
+        font-family: 'helvetica neue', arial, sans-serif;
+    }
+    .list--profile {
+        display: flex;
+        flex-flow: row wrap;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .profile {
+        width: 25%;
+        font-size: 16px;
+        box-sizing: border-box;
+        padding: 10px;
+    }
+    .box--profile {
+        border: 1px solid #ddd;
+        box-sizing: border-box;
+        border-radius: 5px;
+        padding: 10px;
+        position: relative;
+        min-height: 225px;
+    }
+    .box--profile .bg {
+        content: '';
+        position: absolute;
+        background: rgb(0, 142, 224);
+        width: 100%;
+        height: 50px;
+        border-radius: 5px 5px 0 0;
+        left: 0;
+        top: 0;
+        right: 0;
+    }
+    .profile .name {
+        font-weight: bold;
+    }
+    .profile .url {
+        margin-bottom: 10px;
+    }
+    .profile .url a {
+        font-size: 14px;
+        color: #3b00c5;
+    }
+    .profile img + .name {
+        margin-top: 13px;
+    }
+    .profile img {
+        width: 50px;
+        height: 50px;
+        border-radius: 5px;
+        box-shadow: 0 2px 2px rgba(0,0,0,0.15);
+        position: relative;
+        z-index: 10;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .profile .desc {
+        margin-top: 15px;
+        font-size: 14px;
+        color: #555;
+    }
+    </style>
+</head>
+<body>
+    <div class="list--profile">
+        <%= body %>
+    </div>
+</body>
+</html>
