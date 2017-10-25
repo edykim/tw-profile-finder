@@ -16,6 +16,9 @@ const storePath = path.resolve(basePath, config.getConfig('start'));
 
 try {
     fs.mkdirSync(basePath);
+} catch (e) {}
+
+try {
     fs.mkdirSync(storePath);
 } catch (e) {}
 
