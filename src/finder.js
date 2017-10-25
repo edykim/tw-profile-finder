@@ -32,6 +32,7 @@ class Finder {
         const filter = this.config.getConfig('filter', v => v);
 
         this.data = this.data.concat(profiles).filter(filter);
+        this.data = _.uniqBy(data, 'screen_name');
         console.log('current: ' + this.data.length);
 
         if (this.data.length >= limit || this.data.length === 0) {
