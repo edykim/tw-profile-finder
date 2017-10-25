@@ -14,8 +14,10 @@ const client = new Client(creds);
 const basePath = path.resolve(cwd, 'reports');
 const storePath = path.resolve(basePath, config.getConfig('start'));
 
-fs.mkdirSync(basePath);
-fs.mkdirSync(storePath);
+try {
+    fs.mkdirSync(basePath);
+    fs.mkdirSync(storePath);
+} catch (e) {}
 
 const store = new Store(storePath);
 
