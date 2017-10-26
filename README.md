@@ -6,15 +6,17 @@ Find profile you might be interested from Twitter.
 
 ![tw-profile-finder](https://user-images.githubusercontent.com/33057457/32035965-82118f8a-ba68-11e7-913e-0772afb7a469.png)
 
-# A little background
+## A little background
 
 I love Twitter and I want to find awesome people on Twitter. I can check every single profile, one by one, click over clicks. Yes, it is
-so hard work. I made two assumptions at that time. Firstly, awesome people know awesome people. If I can pick one, probably they follow
-others. Secondly, I can find based on their bio and also servral metrics which Twitter provides e.g. followers, likes, how many time they
+so hard to do and I'm lazy on this.
+
+I made this tool from two assumptions at that time. Firstly, awesome people know awesome people. If I can pick one, probably they follow
+others. Secondly, I can find people based on servral metrics which Twitter provides such as followers numbers, liked twit count, how many time they
 twitted.
 
-This tool allows that find someone filtered by own `function` and chase the tree of the following. Also you can pin a person as a entry point
-of search.
+This tool allows that find someone filtered by own `function` and chase trees of the following. Also, you can pin a person as a entry point
+of search. Hope you find something useful from this tool. ✨
 
 ## What you can get
 
