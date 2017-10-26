@@ -1,4 +1,4 @@
-# Profile Finder
+# Twitter Profile Finder
 
 [![Build Status](https://travis-ci.org/edykim/tw-profile-finder.svg?branch=master)](https://travis-ci.org/edykim/tw-profile-finder)
 
