@@ -8,14 +8,14 @@ Find profile you might be interested from Twitter.
 
 ## A little background
 
-I love Twitter and I want to find awesome people on Twitter. I can check every single profile, one by one, click over clicks. Yes, it is
-so hard to do and I'm lazy on this.
+I love Twitter, and I want to find awesome people on Twitter. I can check every single profile, one by one, click over clicks. Yes, it is
+so hard to do, and I'm lazy on this.
 
 I made this tool from two assumptions at that time. Firstly, awesome people know awesome people. If I can pick one, probably they follow
-others. Secondly, I can find people based on servral metrics which Twitter provides such as followers numbers, liked twit count, how many time they
+others. Secondly, I can find people based on several metrics which Twitter provides such as followers numbers, liked twit count, how many time they
 twitted.
 
-This tool allows that find someone filtered by own `function` and chase trees of the following. Also, you can pin a person as a entry point
+This tool allows that find someone filtered by own `function` and chase trees of the following. Also, you can pin a person as an entry point
 of search. Hope you find something useful from this tool. ✨
 
 ## What you can get
@@ -56,7 +56,7 @@ See [finder.config.example.js](https://github.com/edykim/tw-profile-finder/blob/
 
 ## Contributing
 
-Contributing is AWESOME! This is a toy project so may you can see some jokey messages or code structure. [Please let me know using awesome Github's issue tracker](https://github.com/edykim/tw-profile-finder/issues)
+Contributing is AWESOME! This tool is a toy project so may you can see some jokey messages or code structure. [Please let me know using awesome Github's issue tracker](https://github.com/edykim/tw-profile-finder/issues)
 if you find any issue or idea may we can put into this tool.
 
 ## License
