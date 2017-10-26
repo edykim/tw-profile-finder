@@ -23,7 +23,7 @@
     "url": "https://github.com/edykim/tw-profile-finder/issues"
   },
   "bin": {
-    "findprofile": "./bin/twprofile.js"
+    "twprofile": "./bin/twprofile.js"
   },
   "homepage": "https://github.com/edykim/tw-profile-finder#readme",
   "dependencies": {
