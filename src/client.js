@@ -47,6 +47,9 @@ class Client {
                 return;
             } else if (res.users) {
                 data = data.concat(res.users);
+            } else if (res.error) {
+                console.log(res.error);
+                return callback(null, []);
             } else {
                 return callback(new Error('The server returns unexpected response. Please check the latest version of the application.'));
             }
