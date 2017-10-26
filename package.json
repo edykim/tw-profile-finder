@@ -1,6 +1,6 @@
 {
   "name": "tw-profile-finder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Find profile from Twitter who you are interested",
   "main": "index.js",
   "scripts": {
