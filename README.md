@@ -25,7 +25,7 @@ The tool generates two files as a result.
 - `./reports/<USERNAME>/profiles.html`: Generated report using HTML.
 - `./reports/<USERNAME>/profiles.json`: You can play with the dataa if you like this way.
 
-## Requirement
+## What you need 
 
 - NodeJS
 - Twitter API (from [Twitter Apps](https://apps.twitter.com/))
