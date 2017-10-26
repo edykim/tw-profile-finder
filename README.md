@@ -23,7 +23,7 @@ of search. Hope you find something useful from this tool. ✨
 The tool generates two files as a result.
 
 - `./reports/<USERNAME>/profiles.html`: Generated report using HTML.
-- `./reports/<USERNAME>/profiles.json`: You can play with the dataa if you like this way.
+- `./reports/<USERNAME>/profiles.json`: You can play with the data if you like this way.
 
 ## What you need 
 
