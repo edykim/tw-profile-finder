@@ -17,7 +17,10 @@ function main(program) {
     const cwd = program.cwd;
     const config = require('./config')(cwd);
 
-    config.setConfig('username', username);
+    config
+        .setConfig('username', username)
+        .setConfig('limit', program.limit)
+        .setConfig('verbose', program.verbose);
 
     const basePath = path.resolve(cwd, 'reports');
     const storePath = path.resolve(basePath, config.getConfig('username'));
@@ -30,7 +33,9 @@ function main(program) {
     const template = createTemplate(templatePath);
 
     (new Finder(config, client, store)).run(function () {
-        (new Exporter(config, template, store)).run();
+        if (program.htmlReport) {
+            (new Exporter(config, template, store)).run();
+        }
     });
 }
 

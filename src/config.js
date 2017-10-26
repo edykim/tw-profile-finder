@@ -32,6 +32,7 @@ class Configuration {
         } else {
             this.config[key] = value;
         }
+        return this;
     }
 
     loadConfig() {
