@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "test": "nyc mocha",
+    "coverage": "nyc --reporter=html mocha",
     "export": "node export.js"
   },
   "repository": {
