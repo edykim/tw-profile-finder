@@ -13,7 +13,7 @@ class Finder {
         this.data = [];
         this.callback = callback || function() {};
 
-        const username = this.config.getConfig('start', 'heyedykim');
+        const username = this.config.getConfig('username', 'heyedykim');
         const duration = this.config.getConfig('duration', 1000 * 30);
         this.client.retryAfter(duration);
 
