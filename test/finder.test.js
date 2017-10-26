@@ -2,8 +2,8 @@ const chai = require('chai');
 const expect = chai.expect;
 chai.should();
 
-const FinderFactory = require('./../src/Finder');
-const { Finder } = require('./../src/Finder');
+const FinderFactory = require('./../src/finder');
+const { Finder } = require('./../src/finder');
 
 const Config = require('./../src/config');
 const Client = require('./../src/client');
