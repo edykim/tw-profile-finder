@@ -6,7 +6,7 @@ const Client = require('./../src/client');
 const Twitter = require('twitter');
 const path = require('path');
 const credentials = require('./fixtures/credentials.fixture');
-const {successClient, worstClient, changedClient, nextCursorClient} = require('./fixtures/client.fixture');
+const {successClient, worstClient, changedClient, nextCursorClient, notAuthorizedClient} = require('./fixtures/client.fixture');
 
 describe('Client', function () {
     it('creates with credentials', function () {
@@ -60,6 +60,17 @@ describe('Client', function () {
         client.fetchFriendProfiles('username', function(error, profiles) {
             expect(error).to.be.not.null;
             expect(error.message).to.be.equal('The server returns unexpected response. Please check the latest version of the application.');
+            done();
+        });
+    });
+
+    it('pass empty profiles when it is not authorized request such as protected', function (done) {
+        var client = Client(credentials);
+        client.clients = [notAuthorizedClient];
+
+        client.fetchFriendProfiles('username', function(error, profiles) {
+            expect(error).to.be.null;
+            expect(profiles).to.be.deep.equal([]);
             done();
         });
     });

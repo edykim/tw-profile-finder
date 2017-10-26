@@ -36,6 +36,12 @@ const changedClient = MockClient({
     }
 });
 
+const notAuthorizedClient = MockClient({
+    'friends/list': {
+        res: { request: '/1.1/friends/list.json', error: 'Not authorized.' }
+    }
+});
+
 const realLikeClient = MockClient({
     'friends/list': {
         res: {
@@ -167,4 +173,5 @@ module.exports = {
     nextCursorClient,
     emptyUserClient,
     pretendNextUserClient,
+    notAuthorizedClient,
 };
