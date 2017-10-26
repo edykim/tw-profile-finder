@@ -4,6 +4,8 @@ const pkg = require('../package.json');
 
 program.cwd = process.cwd();
 
+program.addImplicitHelpCommand = () => {};
+
 program
     .version(pkg.version)
     .description('Find profile who you are interested from Twitter')
