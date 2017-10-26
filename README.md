@@ -1,6 +1,6 @@
 # Twitter Profile Finder
 
-[![Build Status](https://travis-ci.org/edykim/tw-profile-finder.svg?branch=master)](https://travis-ci.org/edykim/tw-profile-finder)
+[![Build Status](https://travis-ci.org/edykim/tw-profile-finder.svg?branch=master)](https://travis-ci.org/edykim/tw-profile-finder) [![npm version](https://badge.fury.io/js/tw-profile-finder.svg)](https://badge.fury.io/js/tw-profile-finder)
 
 Find profile you might be interested from Twitter.
 
