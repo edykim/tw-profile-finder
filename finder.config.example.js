@@ -1,9 +1,6 @@
 // Example of finder.config.js
 
 module.exports = {
-    // Start username
-    start: 'haruair',
-
     // filter rule for the profiles
     filter: (profile) => {
         return profile;

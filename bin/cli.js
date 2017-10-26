@@ -7,7 +7,7 @@ program.cwd = process.cwd();
 
 program
     .version(pkg.version)
-    .usage('<screen_name>')
+    .usage('<username>')
     .parse(process.argv);
 
 main();

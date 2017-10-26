@@ -2,7 +2,6 @@ const path = require('path');
 
 class Configuration {
     constructor(path) {
-        path = path || process.cwd();
         this.path = path;
     }
 
@@ -14,11 +13,34 @@ class Configuration {
     }
 
     getConfig(key, defaults) {
-        this.config = this.config || require(this.currentConfigFilePath());
+        if (!this.isLoaded) {
+            this.loadConfig();
+        }
+
         if (key) {
             return this.config[key] || defaults || null;
         }
         return this.config || null;
+    }
+
+    setConfig(key, value) {
+        if (!this.isLoaded) {
+            this.loadConfig();
+        }
+        if (key instanceof Object) {
+            this.config = key;
+        } else {
+            this.config[key] = value;
+        }
+    }
+
+    loadConfig() {
+        if (!this.path) {
+            this.config = {};
+        } else {
+            this.config = require(this.currentConfigFilePath());
+        }
+        this.isLoaded = true;
     }
 }
 

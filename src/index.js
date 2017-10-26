@@ -8,11 +8,19 @@ const Exporter = require('./exporter');
 const Template = require('./template');
 
 function main(program) {
-    const cwd = program.cwd;
+    if (!program.args[0]) {
+        return program.help();
+    }
 
+    const username = program.args[0];
+
+    const cwd = program.cwd;
     const config = require('./config')(cwd);
+
+    config.setConfig('username', username);
+
     const basePath = path.resolve(cwd, 'reports');
-    const storePath = path.resolve(basePath, config.getConfig('start'));
+    const storePath = path.resolve(basePath, config.getConfig('username'));
     const templatePath = path.resolve(__dirname, '..', 'templates', 'basic');
 
     createDirectory(basePath, storePath);

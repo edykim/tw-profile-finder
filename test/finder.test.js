@@ -50,10 +50,10 @@ describe('Finder', function () {
 
     it('executes and fetch all data', function(done) {
         const config = new Config();
-        config.config = {
+        config.setConfig({
             limit: 5,
             duration: 1,
-        };
+        });
 
         const client = new Client(credentials);
         client.clients = [worstClient, realLikeClient];
@@ -98,10 +98,10 @@ describe('Finder', function () {
 
     it('has empty function fallback for callback', function() {
         const config = new Config();
-        config.config = {
+        config.setConfig({
             limit: 5,
             duration: 1,
-        };
+        });
 
         const client = new Client(credentials);
         client.clients = [realLikeClient];
@@ -118,10 +118,10 @@ describe('Finder', function () {
 
     it('executes and fetch all data even no users returned', function () {
         const config = new Config();
-        config.config = {
+        config.setConfig({
             limit: 5,
             duration: 1,
-        };
+        });
 
         const client = new Client(credentials);
         client.clients = [emptyUserClient];
@@ -140,10 +140,10 @@ describe('Finder', function () {
 
     it('fetch all data over the limit via next user', function () {
         const config = new Config();
-        config.config = {
+        config.setConfig({
             limit: 5,
             duration: 1,
-        };
+        });
 
         const client = new Client(credentials);
         client.clients = [pretendNextUserClient];
@@ -161,10 +161,10 @@ describe('Finder', function () {
 
     it('raises error when client returns error', function () {
         const config = new Config();
-        config.config = {
+        config.setConfig({
             limit: 5,
             duration: 1,
-        };
+        });
 
         const client = new Client(credentials);
         client.clients = [changedClient];

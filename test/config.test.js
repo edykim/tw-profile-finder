@@ -8,7 +8,7 @@ const path = require('path');
 describe('Configuration', function () {
     it('constructs with a current path if the init path is not passed', function () {
         var conf = Config();
-        conf.path.should.be.equal(process.cwd());
+        expect(conf.path).to.be.undefined;
     });
 
     it('constructs with a given path', function () {
@@ -32,6 +32,21 @@ describe('Configuration', function () {
                 access_token: 'test_token',
             }
         });
+    });
+
+    it('sets config', function () {
+        var configPath = path.resolve(__dirname, 'fixtures');
+        var config = Config(configPath);
+        config.setConfig('name', 'koala');
+
+        var conf = config.getConfig();
+
+        conf.should.be.deep.equal({
+            name: 'koala',
+            credential: {
+                access_token: 'test_token',
+            }
+        }); 
     });
 
     it('raise a error if config does not exists', function () {
