@@ -23,3 +23,7 @@ Find the profiles.
 ```
 twprofile find <username>
 ```
+
+## Configuration
+
+See [finder.config.example.js](https://github.com/edykim/tw-profile-finder/blob/master/finder.config.example.js).
