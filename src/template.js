@@ -23,14 +23,13 @@ class Template {
 
         this.base = template.base;
         this.content = template.content;
-        this.parser = template.parser || function (v) { return v };
+        this.parser = template.parser && template.parser instanceof Function
+            ? template.parser
+            : function (v) { return v };
     }
 
     render(data) {
-        if (this.parser) {
-            data = this.parser(data);
-        }
-
+        data = this.parser(data);
         const body = _.template(this.content)({ users: data });
         return _.template(this.base)({ body: body });
     }
