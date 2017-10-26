@@ -56,7 +56,7 @@ See [finder.config.example.js](https://github.com/edykim/tw-profile-finder/blob/
 
 ## Contributing
 
-Contributing is AWESOME! This is a toy project so may you can see some jokey codes and messages. [Please let me know using tickets](https://github.com/edykim/tw-profile-finder/issues)
+Contributing is AWESOME! This is a toy project so may you can see some jokey messages or code structure. [Please let me know using awesome Github's issue tracker](https://github.com/edykim/tw-profile-finder/issues)
 if you find any issue or idea may we can put into this tool.
 
 ## License
