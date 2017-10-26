@@ -4,10 +4,8 @@
   "description": "Find profile from Twitter who you are interested",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
     "test": "nyc mocha",
-    "coverage": "nyc --reporter=html mocha",
-    "export": "node export.js"
+    "coverage": "nyc --reporter=html mocha"
   },
   "repository": {
     "type": "git",
