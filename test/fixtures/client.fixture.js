@@ -70,6 +70,67 @@ const realLikeClient = MockClient({
     }
 });
 
+
+const emptyUserClient = MockClient({
+    'friends/list': {
+        res: {
+            users: []
+        }
+    }
+});
+
+const pretendNextUserClient = MockClient({
+    'friends/list': [
+        {
+            res: {
+                users: [
+                    {
+                        name: 'hello0',
+                        screen_name: 'hello0',
+                        description: 'mock user',
+                    },
+                    {
+                        name: 'hello1',
+                        screen_name: 'hello1',
+                        description: 'mock user',
+                    },
+                ]
+            }
+        },
+        {
+            res: {
+                users: [
+                    {
+                        name: 'bye0',
+                        screen_name: 'bye0',
+                        description: 'mock user',
+                    },
+                    {
+                        name: 'bye1',
+                        screen_name: 'bye1',
+                        description: 'mock user',
+                    },
+                    {
+                        name: 'bye2',
+                        screen_name: 'bye2',
+                        description: 'mock user',
+                    },
+                    {
+                        name: 'bye3',
+                        screen_name: 'bye3',
+                        description: 'mock user',
+                    },
+                    {
+                        name: 'bye4',
+                        screen_name: 'bye4',
+                        description: 'mock user',
+                    }
+                ]
+            }
+        },
+    ]
+});
+
 const nextCursorClient = MockClient({
     'friends/list': [
         {
@@ -104,4 +165,6 @@ module.exports = {
     changedClient,
     realLikeClient,
     nextCursorClient,
+    emptyUserClient,
+    pretendNextUserClient,
 };

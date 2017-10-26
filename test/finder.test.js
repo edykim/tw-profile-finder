@@ -10,7 +10,7 @@ const Client = require('./../src/client');
 const credentials = require('./fixtures/credentials.fixture');
 const MockStore = require('./fixtures/mock-store');
 
-const {realLikeClient, worstClient} = require('./fixtures/client.fixture');
+const {successClient, realLikeClient, changedClient, worstClient, emptyUserClient, pretendNextUserClient} = require('./fixtures/client.fixture');
 
 describe('Finder', function () {
     it('construct with Configuration, Client and Store', function () {
@@ -116,4 +116,66 @@ describe('Finder', function () {
         expect(finder.callback).to.be.instanceof(Function);
     });
 
+    it('executes and fetch all data even no users returned', function () {
+        const config = new Config();
+        config.config = {
+            limit: 5,
+            duration: 1,
+        };
+
+        const client = new Client(credentials);
+        client.clients = [emptyUserClient];
+
+        const store = new MockStore();
+        const finder = new FinderFactory(config, client, store);
+
+        var validate = () => {
+            expect(store.data).to.have.lengthOf(0);
+            expect(store.data).to.be.deep.equal([]);
+            done();
+        };
+
+        finder.run(validate);
+    });
+
+    it('fetch all data over the limit via next user', function () {
+        const config = new Config();
+        config.config = {
+            limit: 5,
+            duration: 1,
+        };
+
+        const client = new Client(credentials);
+        client.clients = [pretendNextUserClient];
+
+        const store = new MockStore();
+        const finder = new FinderFactory(config, client, store);
+
+        var validate = () => {
+            expect(store.data).to.have.lengthOf(6);
+            done();
+        };
+
+        finder.run(validate);
+    });
+
+    it('raises error when client returns error', function () {
+        const config = new Config();
+        config.config = {
+            limit: 5,
+            duration: 1,
+        };
+
+        const client = new Client(credentials);
+        client.clients = [changedClient];
+
+        const store = new MockStore();
+        const finder = new FinderFactory(config, client, store);
+
+        const expectedError = () => {
+            finder.fetch('username');
+        };
+
+        expect(expectedError).to.be.throw('The server returns unexpected response. Please check the latest version of the application.');
+    });
 });
