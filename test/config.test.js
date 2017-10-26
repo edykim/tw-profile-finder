@@ -49,6 +49,22 @@ describe('Configuration', function () {
         }); 
     });
 
+    it('sets config after config loaded', function () {
+        var configPath = path.resolve(__dirname, 'fixtures');
+        var config = Config(configPath);
+        config.loadConfig();
+        config.setConfig('name', 'koala');
+
+        var conf = config.getConfig();
+
+        conf.should.be.deep.equal({
+            name: 'koala',
+            credential: {
+                access_token: 'test_token',
+            }
+        }); 
+    });
+
     it('raise a error if config does not exists', function () {
         const throwNonExistsConfig = () => {
             var configPath = path.resolve(__dirname, 'random');
