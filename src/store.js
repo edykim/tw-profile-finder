@@ -8,9 +8,21 @@ class Store {
 
     save(data) {
         return fs.writeFileSync(
-            path.resolve(this.path, 'profiles.json'),
+            this.storePath(),
             JSON.stringify(data, null, 2),
             'utf-8');
+    }
+
+    load() {
+        return require(this.storePath());
+    }
+
+    storePath() {
+        return path.resolve(this.path, 'profiles.json');
+    }
+
+    storeHtmlPath() {
+        return path.resolve(this.path, 'profiles.html');
     }
 }
 
