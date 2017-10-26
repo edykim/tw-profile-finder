@@ -7,7 +7,7 @@ program.cwd = process.cwd();
 
 program
     .version(pkg.version)
-    .usage('<username>')
+    .usage('[options] <username>')
     .option('-l, --limit <n>', 'Fetch the profile based on this limit', 1000)
     .option('-n, --no-html-report', 'Create report without html report', false)
     .option('-v, --verbose', 'Show all request detail', false)
