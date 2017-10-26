@@ -45,9 +45,10 @@ class Client {
                     this.fetchFriendProfiles(username, callback, data, cursor);
                 }, this.getRetryAfter());
                 return;
-            }
-            else if (res.users) {
+            } else if (res.users) {
                 data = data.concat(res.users);
+            } else {
+                return callback(new Error('The server returns unexpected response. Please check the latest version of the application.'));
             }
 
             if (res.next_cursor) {
@@ -55,7 +56,7 @@ class Client {
                     this.fetchFriendProfiles(username, callback, data, res.next_cursor);
                 });
             } else {
-                callback(data);
+                callback(null, data);
             }
         })
     }

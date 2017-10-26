@@ -6,7 +6,7 @@ const Client = require('./../src/client');
 const Twitter = require('twitter');
 const path = require('path');
 const credentials = require('./fixtures/credentials.fixture');
-const {successClient, worstClient} = require('./fixtures/client.fixture');
+const {successClient, worstClient, changedClient, nextCursorClient} = require('./fixtures/client.fixture');
 
 describe('Client', function () {
     it('creates with credentials', function () {
@@ -37,8 +37,29 @@ describe('Client', function () {
         var client = Client(credentials);
         client.clients = [successClient];
 
-        client.fetchFriendProfiles('username', function(profiles) {
+        client.fetchFriendProfiles('username', function(error, profiles) {
             expect(profiles).to.have.lengthOf(1);
+            done();
+        });
+    });
+
+    it('fetch friend list with next cursor', function (done) {
+        var client = Client(credentials);
+        client.clients = [nextCursorClient];
+
+        client.fetchFriendProfiles('username', function(error, profiles) {
+            expect(profiles).to.have.lengthOf(2);
+            done();
+        });
+    });
+
+    it('raises the error if the API response changed', function (done) {
+        var client = Client(credentials);
+        client.clients = [changedClient];
+
+        client.fetchFriendProfiles('username', function(error, profiles) {
+            expect(error).to.be.not.null;
+            expect(error.message).to.be.equal('The server returns unexpected response. Please check the latest version of the application.');
             done();
         });
     });
@@ -48,7 +69,7 @@ describe('Client', function () {
         client.retryAfter(1);
         client.clients = [worstClient, worstClient, worstClient, successClient];
 
-        client.fetchFriendProfiles('username', function(profiles) {
+        client.fetchFriendProfiles('username', function(error, profiles) {
             expect(profiles).to.have.lengthOf(1);
             expect(client.current).to.be.equal(successClient);
             done();

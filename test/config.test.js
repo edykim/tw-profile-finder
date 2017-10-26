@@ -34,6 +34,24 @@ describe('Configuration', function () {
         });
     });
 
+    it('raise a error if config does not exists', function () {
+        const throwNonExistsConfig = () => {
+            var configPath = path.resolve(__dirname, 'random');
+            var config = Config(configPath);
+            var conf = config.getConfig();
+        };
+
+        expect(throwNonExistsConfig).to.be.throw();
+    });
+
+    it('returns null if config file return empty', function () {
+        var configPath = path.resolve(__dirname, 'fixtures', 'empty');
+        var config = Config(configPath);
+        var conf = config.getConfig();
+
+        expect(conf).to.be.null;
+    });
+
     it('returns config with a key otherwise returns default', function () {
         var configPath = path.resolve(__dirname, 'fixtures');
         var config = Config(configPath);

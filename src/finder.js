@@ -22,7 +22,8 @@ class Finder {
 
     fetch(username) {
         console.log('fetch', username);
-        this.client.fetchFriendProfiles(username, (profiles) => {
+        this.client.fetchFriendProfiles(username, (error, profiles) => {
+            if (error) throw error;
             this.next(profiles);
         });
     }
